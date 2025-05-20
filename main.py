@@ -17,7 +17,8 @@ graph = graph_builder.compile()
 def main():
     state = State(file_path="plant_list.pdf")
     for state_stream in graph.stream(state, stream_mode="values"):
-        state_stream.messages[-1].pretty_print()
+        if len(state_stream["messages"]) > 0:
+            state_stream["messages"][-1].pretty_print()
 
 
 if __name__ == "__main__":

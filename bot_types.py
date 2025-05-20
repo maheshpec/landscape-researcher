@@ -5,5 +5,5 @@ from pydantic import BaseModel
 
 
 class State(BaseModel):
-    messages: Optional[list[BaseMessage]]
-    file_path: Optional[str]
+    messages: Optional[list[BaseMessage]] = list()
+    file_path: Optional[str] = None
